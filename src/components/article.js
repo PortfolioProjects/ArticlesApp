@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { PureComponent } from 'react';
 
-function Article({ article, isOpen, toggleOpen }) {
-  return (
-    <div>
+class Article extends PureComponent {
+  handleButtonClick = () => {
+    this.props.toggleOpen(this.props.article.id);
+  };
+
+  render() {
+    const { article, isOpen } = this.props;
+
+    return (
       <div>
-        <h3>{article.title}</h3>
-        <button onClick={toggleOpen}>{isOpen ? 'Close' : 'Open'}</button>
+        <div>
+          <h3>{article.title}</h3>
+          <button onClick={this.handleButtonClick}>
+            {isOpen ? 'Close' : 'Open'}
+          </button>
+        </div>
+        {isOpen && <section>{article.text}</section>}
       </div>
-      {isOpen && <section>{article.text}</section>}
-    </div>
-  );
+    );
+  }
 }
 
 export default Article;
