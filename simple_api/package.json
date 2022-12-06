@@ -6,7 +6,7 @@
     "body-parser": "^1.18.3",
     "core-js": "^0.9.18",
     "object-assign": "^4.1.1",
-    "qs": "^5.2.1",
+    "qs": "^6.2.4",
     "express": "^4.16.4"
   },
   "scripts": {
